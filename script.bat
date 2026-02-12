@@ -1,10 +1,10 @@
 @echo off
-title Windows Diagnostic and Repair Tool v1.0
+title Windows Diagnostic and Repair Tool v1.1
 
 :menu
 cls
 echo ===========================================
-echo   Windows Diagnostic and Repair Tool v1.0
+echo   Windows Diagnostic and Repair Tool v1.1
 echo ===========================================
 echo.
 echo       1 - Fetch Minidump Files
@@ -48,18 +48,28 @@ goto menu
 :getdumps
 cls
 set dumpPath=C:\Windows\Minidump
+set desktop=%USERPROFILE%\Desktop
 
-if exist "%dumpPath%" (
-    echo Fetching minidump files from %dumpPath%...
+if not exist "%dumpPath%" (
+    echo Minidump directory does not exist.
     echo.
-    dir "%dumpPath%" /b
-) else (
-    echo Minidump directory not found.
+    pause
+    goto menu
 )
 
+echo Creating ZIP of minidump files...
+
+set zipFile=%desktop%\Minidumps.zip
+
+powershell -command "Compress-Archive -Path '%dumpPath%\*' -DestinationPath '%zipFile%' -Force"
+
+echo.
+echo ZIP created at:
+echo %zipFile%
 echo.
 pause
 goto menu
+
 
 
 :devinfo
