@@ -28,7 +28,7 @@ goto menu
 :menu2
 cls
 echo ===============================
-echo        System Tools Menu
+echo        Account Tools Menu
 echo ===============================
 echo 1) Account Information
 echo 2) Advanced Account Settings
@@ -107,3 +107,4 @@ goto menu
 :end
 echo Exiting...
 exit
+
