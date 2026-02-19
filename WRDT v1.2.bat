@@ -82,7 +82,7 @@ echo  ============================
 echo         Account Section
 echo  ============================
 echo.
-ecbo  This section is not available yet.
+echo  This section is not available yet.
 echo  Try again later!
 echo.
 echo.
@@ -106,7 +106,7 @@ echo  ============================
 echo         Network Section
 echo  ============================
 echo.
-ecbo  This section is not available yet.
+echo  This section is not available yet.
 echo  Try again later!
 echo.
 echo.
@@ -131,7 +131,7 @@ echo  ============================
 echo         Devices Section
 echo  ============================
 echo.
-ecbo  This section is not available yet.
+echo  This section is not available yet.
 echo  Try again later!
 echo.
 echo.
@@ -156,7 +156,7 @@ echo  ============================
 echo         Services Section
 echo  ============================
 echo.
-ecbo  This section is not available yet.
+echo  This section is not available yet.
 echo  Try again later!
 echo.
 echo.
@@ -305,4 +305,5 @@ goto menu2
 :end
 echo Exiting...
 exit
+
 
