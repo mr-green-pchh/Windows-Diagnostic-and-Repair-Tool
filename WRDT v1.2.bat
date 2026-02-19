@@ -1,5 +1,5 @@
 @echo off
-title WDRT v1.2
+title WDRT v1.2.1
 
 :: Check for admin rights
 net session >nul 2>&1
@@ -305,5 +305,6 @@ goto menu2
 :end
 echo Exiting...
 exit
+
 
 
