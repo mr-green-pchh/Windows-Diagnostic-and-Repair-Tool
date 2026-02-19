@@ -17,7 +17,7 @@ exit /b
 cls
 echo.
 echo  ============================
-echo            WDRT v1.2
+echo            WDRT v1.2.1
 echo  ============================
 echo.
 echo.
@@ -82,6 +82,8 @@ echo  ============================
 echo         Account Section
 echo  ============================
 echo.
+ecbo  This section is not available yet.
+echo  Try again later!
 echo.
 echo.
 echo  0.) Go Back
@@ -104,6 +106,8 @@ echo  ============================
 echo         Network Section
 echo  ============================
 echo.
+ecbo  This section is not available yet.
+echo  Try again later!
 echo.
 echo.
 echo  0.) Go Back
@@ -127,6 +131,8 @@ echo  ============================
 echo         Devices Section
 echo  ============================
 echo.
+ecbo  This section is not available yet.
+echo  Try again later!
 echo.
 echo.
 echo  0.) Go Back
@@ -150,6 +156,8 @@ echo  ============================
 echo         Services Section
 echo  ============================
 echo.
+ecbo  This section is not available yet.
+echo  Try again later!
 echo.
 echo.
 echo  0.) Go Back
@@ -172,8 +180,8 @@ echo  ============================
 echo         Developer Section
 echo  ============================
 echo.
-echo.
 echo  Developed by repairmycomputer.net
+echo.
 echo.
 echo  0.) Go Back
 echo.
@@ -297,3 +305,4 @@ goto menu2
 :end
 echo Exiting...
 exit
+
