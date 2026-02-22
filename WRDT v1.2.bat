@@ -64,7 +64,7 @@ set /p choice=Select an option:
 
 if "%choice%"=="1" goto sysinfo
 if "%choice%"=="2" goto getdumps
-if "%choice%"=="3" goto systemrepair
+if "%choice%"=="3" goto systemrepairconfirm
 if "%choice%"=="0" goto menu
 echo Invalid selection.
 pause
@@ -194,6 +194,24 @@ pause
 goto developer
 
 
+:systemrepairconfirm
+cls
+echo.
+echo Are you sure you want to run the system repair?
+echo This can take several minutes to complete.
+echo.
+echo.
+echo  1.) Yes
+echo  0.) Go Back
+echo.
+echo.
+set /p choice=Select an option: 
+
+if "%choice%"=="1" goto systemrepair
+if "%choice%"=="0" goto system
+echo Invalid selection.
+pause
+goto systemrepairconfirm
 
 
 :systemrepair
