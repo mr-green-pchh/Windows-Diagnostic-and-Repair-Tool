@@ -1,1 +1,5 @@
-This is a simple bat based application that utilizes the pre existing windows commands and applications, this is intended to be used by technicans, and/or advisors assisting others with issues.
+This is a lightweight, open‑source BAT‑based tool that leverages built‑in Windows commands and utilities. It is designed for technicians and support advisors assisting users with system issues.
+
+Administrator privileges are required to run the tool.
+
+If you encounter any problems, please report them through the GitHub Issues tab or via our Discord server at: repairmycomputer.net/invite
