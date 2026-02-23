@@ -36,7 +36,7 @@ if "%choice%"=="1" goto menu
 if "%choice%"=="0" goto end
 echo Invalid selection.
 pause
-goto license
+goto terms
 
 
 
@@ -53,8 +53,7 @@ echo  1.) System
 echo  2.) Account
 echo  3.) Network
 echo  4.) Devices
-echo  5.) Services
-echo  6.) Developer
+echo  5.) License
 echo.
 echo  0.) Exit
 echo.
@@ -65,8 +64,7 @@ if "%choice%"=="1" goto system
 if "%choice%"=="2" goto account
 if "%choice%"=="3" goto network
 if "%choice%"=="4" goto devices
-if "%choice%"=="5" goto services
-if "%choice%"=="6" goto developer
+if "%choice%"=="5" goto license
 if "%choice%"=="0" goto end
 echo Invalid selection.
 pause
@@ -83,8 +81,10 @@ echo  ============================
 echo.
 echo.
 echo  1.) System Information
-echo  2.) Export Minidump
-echo  3.) Repair
+echo  2.) Services
+echo  3.) Task Manager
+echo  4.) Export Minidumps
+echo  5.) Repair
 echo.
 echo  0.) Go Back
 echo.
@@ -92,8 +92,10 @@ echo.
 set /p choice=Select an option: 
 
 if "%choice%"=="1" goto sysinfo
-if "%choice%"=="2" goto getdumps
-if "%choice%"=="3" goto systemrepairconfirm
+if "%choice%"=="2" goto services
+if "%choice%"=="3" goto taskmanager
+if "%choice%"=="4" goto getdumps
+if "%choice%"=="5" goto systemrepairconfirm
 if "%choice%"=="0" goto menu
 echo Invalid selection.
 pause
@@ -175,21 +177,34 @@ pause
 goto devices
 
 
-
-
-::Services Section
-:services
+:: License
+:license
 cls
 echo.
-echo  ============================
-echo         Services Section
-echo  ============================
+echo MIT License
 echo.
-echo  This section is not available yet.
-echo  Try again later!
+echo Copyright (c) 2026 Repair My Computer
+echo.
+echo Permission is hereby granted, free of charge, to any person obtaining a copy
+echo of this software and associated documentation files (the "Software"), to deal
+echo in the Software without restriction, including without limitation the rights
+echo to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+echo copies of the Software, and to permit persons to whom the Software is
+echo furnished to do so, subject to the following conditions:
+echo.
+echo The above copyright notice and this permission notice shall be included in all
+echo copies or substantial portions of the Software.
+echo.
+echo THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+echo IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+echo FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+echo AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+echo LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+echo OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+echo SOFTWARE.
 echo.
 echo.
-echo  0.) Go Back
+echo  0.) Go back
 echo.
 echo.
 set /p choice=Select an option: 
@@ -197,7 +212,19 @@ set /p choice=Select an option:
 if "%choice%"=="0" goto menu
 echo Invalid selection.
 pause
-goto services
+goto license
+
+::Launch Services
+:services
+cls
+start services.msc
+goto system
+
+::Launch Task Manager
+:taskmanager
+cls
+start taskmgr.exe
+goto system
 
 
 
@@ -316,13 +343,6 @@ pause
 goto system
 
 
-
-:devinfo
-cls
-start "" https://github.com/mr-green-pchh
-
-echo.
-goto menu
 
 
 
