@@ -72,7 +72,23 @@ pause
 goto system
 
 
+:: License Section-For future use
+:license
+cls
+echo.
+echo license goes here
+echo.
+echo  1.) Agree
+echo  0.) Exit
+echo.
+echo.
+set /p choice=Select an option: 
 
+if "%choice%"=="1" goto menu
+if "%choice%"=="0" goto end
+echo Invalid selection.
+pause
+goto license
 
 
 :: Account Section
