@@ -12,6 +12,34 @@ pause
 exit /b
 )
 
+
+:: License Section-For future use
+:license
+cls
+echo.
+echo THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+echo IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+echo FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+echo AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+echo LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+echo OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+echo SOFTWARE.
+echo.
+echo.
+echo  1.) I agree to these terms and conditions.
+echo  0.) Exit
+echo.
+echo.
+set /p choice=Select an option: 
+
+if "%choice%"=="1" goto menu
+if "%choice%"=="0" goto end
+echo Invalid selection.
+pause
+goto license
+
+
+
 :: Main Menu
 :menu
 cls
@@ -72,30 +100,7 @@ pause
 goto system
 
 
-:: License Section-For future use
-:license
-cls
-echo.
-echo THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-echo.
-echo.
-echo  1.) I agree to these terms and conditions.
-echo  0.) Exit
-echo.
-echo.
-set /p choice=Select an option: 
 
-if "%choice%"=="1" goto menu
-if "%choice%"=="0" goto end
-echo Invalid selection.
-pause
-goto license
 
 
 :: Account Section
