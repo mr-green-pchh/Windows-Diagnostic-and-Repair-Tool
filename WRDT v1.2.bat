@@ -12,7 +12,7 @@ pause
 exit /b
 )
 
-
+:: Main Menu
 :menu
 cls
 echo.
@@ -45,6 +45,7 @@ pause
 goto menu
 
 
+::System Section
 :system
 cls
 echo.
@@ -74,7 +75,7 @@ goto system
 
 
 
-
+:: Account Section
 :account
 cls
 echo.
@@ -98,7 +99,7 @@ goto account
 
 
 
-
+::Network Section
 :network
 cls
 echo.
@@ -123,7 +124,7 @@ goto network
 
 
 
-
+::Devices Section
 :devices
 cls
 echo.
@@ -148,7 +149,7 @@ goto devices
 
 
 
-
+::Services Section
 :services
 cls
 echo.
@@ -172,7 +173,7 @@ goto services
 
 
 
-
+::Developer Section
 :developer
 cls
 echo.
@@ -193,7 +194,7 @@ echo Invalid selection.
 pause
 goto developer
 
-
+::System Repair Confirmation Screen
 :systemrepairconfirm
 cls
 echo.
@@ -213,7 +214,7 @@ echo Invalid selection.
 pause
 goto systemrepairconfirm
 
-
+::System Repair Command Line
 :systemrepair
 cls
 
@@ -235,7 +236,7 @@ echo.
 pause
 goto system
 
-
+:: Reports back errors during the SFC Command
 :sfc_error
 echo.
 echo SFC encountered an error.
@@ -247,7 +248,7 @@ set /p choice=Select an option:
 if "%choice%"=="1" goto system
 exit /b
 
-
+:: Reports back errors during the DISM Command 
 :dism_error
 echo.
 echo DISM encountered an error.
@@ -260,7 +261,7 @@ if "%choice%"=="1" goto system
 exit /b
 
 
-
+:: Fetch Minidump Command
 :getdumps
 cls
 set dumpPath=C:\Windows\Minidump
