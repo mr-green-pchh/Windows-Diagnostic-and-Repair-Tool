@@ -1,11 +1,13 @@
 @echo off
-title WDRT v1.2.3
+set "APP_VERSION=1.2.3"
+title WDRT v%APP_VERSION%
+
 
 :: Check for admin rights
 net session >nul 2>&1
 if %errorlevel% neq 0 (
 echo.
-echo WDRT requires administrator privileges to run properly.
+echo WDRT v%APP_VERSION% requires administrator privileges to run properly.
 echo close the program, right click the file and run it in administrator mode.
 echo.
 pause
@@ -45,7 +47,7 @@ goto terms
 cls
 echo.
 echo  ============================
-echo            WDRT v1.2.3
+echo            WDRT v%APP_VERSION%
 echo  ============================
 echo.
 echo.
