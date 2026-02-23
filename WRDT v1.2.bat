@@ -1,5 +1,5 @@
 @echo off
-title WDRT v1.2.2
+title WDRT v1.2.3
 
 :: Check for admin rights
 net session >nul 2>&1
@@ -13,8 +13,8 @@ exit /b
 )
 
 
-:: License Section-For future use
-:license
+:: Terms and Conditions
+:terms
 cls
 echo.
 echo THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
@@ -45,7 +45,7 @@ goto license
 cls
 echo.
 echo  ============================
-echo            WDRT v1.2.2
+echo            WDRT v1.2.3
 echo  ============================
 echo.
 echo.
