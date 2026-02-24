@@ -226,28 +226,24 @@ cls
 start taskmgr.exe
 goto system
 
-
-
-::Developer Section
-:developer
+:networkreset
 cls
-echo.
-echo  ============================
-echo         Developer Section
-echo  ============================
-echo.
-echo  Developed by repairmycomputer.net
-echo.
-echo.
-echo  0.) Go Back
-echo.
-echo.
-set /p choice=Select an option: 
-
-if "%choice%"=="0" goto menu
-echo Invalid selection.
+Netsh wlan delete profile *
+netsh winsock reset
+netsh int ip reset
+ipconfig /release
+ipconfig /renew
+ipconfig /flushdns
 pause
-goto developer
+goto menu
+
+
+:dnsreset
+ipconfig /flushdns
+net stop dnscache
+net start dnscache
+pause
+goto menu
 
 ::System Repair Confirmation Screen
 :systemrepairconfirm
@@ -272,22 +268,9 @@ goto systemrepairconfirm
 ::System Repair Command Line
 :systemrepair
 cls
-
-echo Running SFC...
 sfc /scannow
-if %errorlevel% neq 0 goto sfc_error
-echo.
-echo SFC Repair Completed.
-echo.
-
-echo Running DISM...
 DISM /Online /Cleanup-Image /RestoreHealth
-if %errorlevel% neq 0 goto dism_error
-echo.
-echo DISM Repair Completed.
-echo.
-echo All System Repairs Have Been Completed.
-echo.
+sfc /scannow
 pause
 goto system
 
