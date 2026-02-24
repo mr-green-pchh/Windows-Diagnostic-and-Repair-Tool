@@ -3,16 +3,14 @@ set "APP_VERSION=1.2.3"
 title WDRT v%APP_VERSION%
 
 
-:: Check for admin rights
+:: --- Auto-elevate to Administrator ---
 net session >nul 2>&1
 if %errorlevel% neq 0 (
-echo.
-echo WDRT v%APP_VERSION% requires administrator privileges to run properly.
-echo close the program, right click the file and run it in administrator mode.
-echo.
-pause
-exit /b
+    echo Requesting administrator privileges...
+    powershell -Command "Start-Process '%~f0' -Verb RunAs"
+    exit /b
 )
+
 
 
 :: Terms and Conditions
