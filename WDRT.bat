@@ -46,8 +46,7 @@ echo  1.) System
 echo  2.) Account
 echo  3.) Network
 echo  4.) Devices
-echo  5.) Data Recovery
-echo  6.) License
+echo  5.) License
 echo.
 echo  0.) Exit
 echo.
@@ -57,8 +56,7 @@ if "%choice%"=="1" call "%ROOT%Panels\System\System.bat" & goto menu
 if "%choice%"=="2" call "%ROOT%Panels\Account\Account.bat" & goto menu
 if "%choice%"=="3" call "%ROOT%Panels\Network\Network.bat" & goto menu
 if "%choice%"=="4" call "%ROOT%Panels\Devices\Devices.bat" & goto menu
-if "%choice%"=="5" call "%ROOT%Panels\DataRecovery\DataRecovery.bat" & goto menu
-if "%choice%"=="6" call "%ROOT%Panels\License\License.bat" & goto menu
+if "%choice%"=="5" call "%ROOT%Panels\License\License.bat" & goto menu
 
 
 if "%choice%"=="0" goto end
